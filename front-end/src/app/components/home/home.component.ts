@@ -47,11 +47,11 @@ export class HomeComponent {
 
   getId(planId: number) {
     this.planId = planId;
-    this.enviarDados()
+    this.sendData()
     this.router.navigate(['/forms'])
   }
 
-  enviarDados() {
-    this.sharedService.dadosCompartilhados = this.planId
+  sendData() {
+    this.sharedService.sharedData = this.planId
   }
 }

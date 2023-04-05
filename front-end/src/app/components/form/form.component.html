@@ -11,7 +11,7 @@
       </div>
     </div>
   </div>
-  <form class="form">
+  <form class="form" (submit)="sendEmail($event)">
     <mat-form-field class="form-fild">
       <mat-label>Nome</mat-label>
       <input [(ngModel)]="name" name="name" type="text" matInput>
@@ -24,6 +24,6 @@
       <mat-label>TEL</mat-label>
       <input [(ngModel)]="tel" name="tel" type="text" matInput>
     </mat-form-field>
-    <button (click)="createClient()" class="btn-assinar" mat-raised-button color="primary">Assinar</button>
+    <input type="submit" value="Assinar" (click)="createClient()" class="btn-assinar" mat-raised-button color="primary" />
   </form>
 </div>

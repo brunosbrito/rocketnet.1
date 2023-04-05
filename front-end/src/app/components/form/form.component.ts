@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SharedService } from 'src/app/shared.service';
+import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 
 @Component({
   selector: 'app-form',
@@ -25,7 +26,7 @@ export class FormComponent {
   }
 
  ngOnInit() {
-    this.id = this.sharedService.dadosCompartilhados;
+    this.id = this.sharedService.sharedData;
     console.log('id',this.id)
     this.http.get(`${this.apiUrl}/plans/${10}`)
       .subscribe({
@@ -54,4 +55,23 @@ export class FormComponent {
       error: (error) => console.error(error)
     })
   }
+
+  public sendEmail(e: Event) {
+    e.preventDefault();
+
+    const templateParams = {
+      from_name: this.name ,
+      message: 'Informações do novo cliente',
+      email: this.email,
+      tel: this.tel,
+    }
+
+    emailjs.sendForm('service_u2zvicq', 'template_gaz091d',e.target as HTMLFormElement, 'I6yIoRj7mzubrp5Bg')
+      .then((result: EmailJSResponseStatus) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
+  }
+
 }

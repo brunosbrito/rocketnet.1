@@ -7,7 +7,6 @@
       </ul>
     </nav>
   </header>
-
   <body>
     <img src="assets/rocketnet.png" alt="Imagem promoção">
     <div>
@@ -19,8 +18,9 @@
         </mat-form-field>
         <button (click)="verifyCep()" mat-raised-button color="primary" class="button">Verificar</button>
       </form>
-    </div>
-       <div class="container">
+    </div >
+    <div class="content">
+      <div class="container">
         <div *ngFor="let plan of dataPlans" class="card">
            <div  class="card-title">
                <h2>{{plan.name}}</h2>
@@ -28,9 +28,10 @@
            </div>
            <div class="card-content">
                <p>{{plan.description}}</p>
-               <button id="{{plan.id}}" (click)="getId(plan.id)"><a href="#">Assinar</a></button>
+               <button id="{{plan.id}}" (click)="getId(plan.id)">Assinar</button>
         </div>
       </div>
+    </div>
     </div>
   </body>
 </div>
