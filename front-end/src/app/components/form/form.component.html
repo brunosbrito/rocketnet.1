@@ -1,0 +1,23 @@
+<div>
+  <div *ngFor="let plan of plan">
+    <h2>{{plan.name}}</h2>
+    <p>{{plan.description}}</p>
+    <p>{{plan.price}}</p>
+    <button (click)="changePlan()" mat-raised-button color="primary">Trocar plano</button>
+  </div>
+  <form class="form">
+    <mat-form-field class="form-fild">
+      <mat-label>Nome</mat-label>
+      <input [(ngModel)]="name" name="name" type="text" matInput>
+    </mat-form-field>
+    <mat-form-field class="form-fild">
+      <mat-label>Email</mat-label>
+      <input [(ngModel)]="email" name="email" type="email" matInput>
+    </mat-form-field>
+    <mat-form-field class="form-fild">
+      <mat-label>TEL</mat-label>
+      <input [(ngModel)]="tel" name="tel" type="text" matInput>
+    </mat-form-field>
+    <button (click)="createClient()" class="btn-assinar" mat-raised-button color="primary">Assinar</button>
+  </form>
+</div>

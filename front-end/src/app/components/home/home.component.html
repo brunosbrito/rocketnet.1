@@ -1,0 +1,36 @@
+<div>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#plans">Planos</a></li>
+        <li><a>Suporte 0800 000 000</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <body>
+    <img src="assets/rocketnet.png" alt="Imagem promoção">
+    <div>
+      <h2>Digite seu CEP para verificação de cobertura e desbloqueio dos planos</h2>
+      <form class="form">
+        <mat-form-field class="form-fild">
+          <mat-label>CEP</mat-label>
+          <input class="input" type="text" name="cep" [(ngModel)]="cep" matInput placeholder="Ex. 0000-00">
+        </mat-form-field>
+        <button (click)="verifyCep()" mat-raised-button color="primary" class="button">Verificar</button>
+      </form>
+    </div>
+    <div *ngFor="let plan of dataPlans" class="container">
+       <div class="card">
+           <div class="card-title">
+               <h2>{{plan.name}}</h2>
+               <p><Span>{{plan.price}}</Span>/month</p>
+           </div>
+           <div class="card-content">
+               <p>{{plan.description}}</p>
+               <button id="{{plan.id}}" (click)="getId(plan.id)"><a href="#">Assinar</a></button>
+           </div>
+      </div>
+    </div>
+  </body>
+</div>
