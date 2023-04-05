@@ -1,9 +1,15 @@
 <div>
-  <div *ngFor="let plan of plan">
-    <h2>{{plan.name}}</h2>
-    <p>{{plan.description}}</p>
-    <p>{{plan.price}}</p>
-    <button (click)="changePlan()" mat-raised-button color="primary">Trocar plano</button>
+  <div class="container">
+    <div *ngFor="let plan of plan" class="card">
+      <div class="card-title">
+        <h2>{{plan.name}}</h2>
+        <p><Span>{{plan.price}}</Span>/mes</p>
+      </div>
+      <div class="card-content">
+        <p>{{plan.description}}</p>
+        <button (click)="changePlan()">Trocar plano</button>
+      </div>
+    </div>
   </div>
   <form class="form">
     <mat-form-field class="form-fild">

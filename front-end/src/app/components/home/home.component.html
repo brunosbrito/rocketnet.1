@@ -20,16 +20,16 @@
         <button (click)="verifyCep()" mat-raised-button color="primary" class="button">Verificar</button>
       </form>
     </div>
-    <div *ngFor="let plan of dataPlans" class="container">
-       <div class="card">
-           <div class="card-title">
+       <div class="container">
+        <div *ngFor="let plan of dataPlans" class="card">
+           <div  class="card-title">
                <h2>{{plan.name}}</h2>
-               <p><Span>{{plan.price}}</Span>/month</p>
+               <p><Span>{{plan.price}}</Span>/mes</p>
            </div>
            <div class="card-content">
                <p>{{plan.description}}</p>
                <button id="{{plan.id}}" (click)="getId(plan.id)"><a href="#">Assinar</a></button>
-           </div>
+        </div>
       </div>
     </div>
   </body>

@@ -2,7 +2,7 @@
   min-width: 150px;
   max-width: 500px;
   width: 100%;
-  margin: 0 auto;
+  margin: 30px auto;
 }
 
 .form-fild {
@@ -11,4 +11,67 @@
 
 .btn-assinar {
   width: 100%;
+}
+
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.container .card{
+  height: 300px;
+  width: 300px;
+  text-align: center;
+  background: linear-gradient(135deg, #ee20d6 0%, #0a2fb6 100%);
+  border-radius: 15px;
+  box-shadow: 2px 5px 15px black;
+  transition: transform 0.3s;
+}
+
+.container .card:hover{
+    transform: scale(1.050);
+}
+
+.container .card .card-title{
+    padding: 30px 20px;
+    border-bottom: 2px solid gray;
+}
+
+.container .card .card-title h2{
+    font-size: 35px;
+    padding-bottom: 15px;
+    color: yellow;
+}
+
+.container .card .card-title p span{
+    font-size: 40px;
+    padding: 0 5px;
+}
+
+.container .card .card-content button{
+    width: 120px;
+    padding: 10px 20px;
+    background: white;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.container .card .card-content button:hover{
+    background: #17ead9;
+    letter-spacing: 1.2px;
+}
+
+.container .card .card-content button a{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
 }
